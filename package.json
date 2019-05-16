@@ -23,6 +23,7 @@
   "homepage": "https://github.com/diegoquirino/organiza#readme",
   "dependencies": {
     "ejs": "^2.6.1",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1"
   }
 }
