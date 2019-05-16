@@ -4,6 +4,10 @@ const { check, validationResult } = require('express-validator/check');
 const app = express();
 
 ////////
+const PORT = 8080;
+const HOST = '0.0.0.0'
+
+////////
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -44,5 +48,5 @@ app.post("/download", [
 })
 
 ////////
-app.listen(3000);
+app.listen(PORT, HOST);
 console.log("Organiza started at http://localhost:3000");
