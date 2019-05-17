@@ -6,37 +6,42 @@
 ============================================================
 0) CHECKLIST DE CRIAÇÃO DO AMBIENTE DE TESTES:
 (  ) Criar Repositório do sistema {sistema}, no TESTLINK (pasta/suíte)
-(  ) Criar Repositório do sistema {sistema}, no REDMINE-GESIS
 (  ) Criar Aba da PLANILHA DE PRODUTIVIDADE DE TESTADOR referente ao sistema {sistema}, no GOOGLE SHEETS
-(  ) Solicitar Repositório do sistema {sistema} para testes automáticos e de desempenho, no GITHUB
+(  ) Solicitar Repositório do sistema {sistema} para testes automáticos e de desempenho, no GITLAB
 ============================================================
 A) CHECKLIST DE ESPECIFICAÇÃO DA VERSÃO {versao}:
 (  ) Criar Plano de Teste do sistema {sistema} para a versão {versao}, no TESTLINK
-(  ) Atribuir tarefas aos especificadores, no REDMINE-GESIS, descrevendo a  proposta de casos de teste para a versão {versao} (descrição detalhada ou mapa mental)
-(  ) Atualizar cartões para a atividade de especificação, no TRELLO
+(  ) Atribuir TAREFAS DE ESPECIFICAÇÃO aos especificadores, no REDMINE-PRODUTO, descrevendo a  proposta de casos de teste para a versão {versao} (descrição detalhada ou mapa mental)
+(  ) Atualizar CARTÕES para a atividade de especificação, no TRELLO
 (  ) ACOMPANHAR A ESPECIFICAÇÃO
 (  ) Realizar a REVISÃO (completa ou por amostragem) dos casos de teste especificados, no TESTLINK
-(  ) Finalizar tarefas, no REDMINE-GESIS
-(  ) Concluir cartões para a atividade de especificação, no TRELLO (informando o @Status: <Revisão/Rejeitado/Aprovado>)
+(  ) Finalizar TAREFAS DE ESPECIFICAÇÃO, no REDMINE-PRODUTO
+(  ) Concluir CARTÕES para a atividade de especificação, no TRELLO (informando o @Status: <Rejeitado/Aprovado>)
 ============================================================
 B) CHECKLIST DE EXECUÇÃO DA BASELINE {baseline}:
 (  ) Criar BASELINE e atribuir Casos de Teste aos testadores, no TESTLINK
 (  ) Atualizar a PLANILHA DE PRODUTIVIDADE DE TESTADOR, no GOOGLE SHEETS, com os nomes dos testadores, a quantidade de Casos de Teste e a produtividade inicial esperada (previsão) para a versão {versao}
 (  ) Atribuir BUGS aos testadores, no REDMINE-PRODUTO
-(  ) Atribuir TAREFAS aos testadores, no REDMINE-GESIS
-(  ) Atualizar cartões para a atividade de execução, no TRELLO
-(  ) Enviar e-mail informando sobre o INÍCIO DA EXECUÇÃO aos testadores e líderes (produto, testes e requisitos)
+(  ) Atribuir TAREFAS DE EXECUÇÃO aos testadores, no REDMINE-PRODUTO
+(  ) Atualizar CARTÕES para a atividade de execução, no TRELLO-TESTES
+(  ) Atualizar CARTÕES informando sobre o INÍCIO DA EXECUÇÃO aos líderes, no TRELLO-PRODUTO
 (  ) ACOMPANHAR A EXECUÇÃO:
-     I. atribuir os BUGs (novos ou retornados) para os responsáveis pelo tratamento, no REDMINE-PRODUTO
+     I. atribuir os BUGs (novos ou retornados) para o LÍDER DE PRODUTO, no REDMINE-PRODUTO
 (  ) Finalizar a PLANILHA DE PRODUTIVIDADE DE TESTADOR, no GOOGLE SHEETS, informando as HORAS DE TESTE mencionadas pelo(s) testador(es) na(s) respectiva(s) atividade(s) de execução, no REDMINE-GESIS
 (  ) Finalizar BASELINE, no TESTLINK
-(  ) Finalizar TAREFAS, no REDMINE-GESIS
-(  ) Concluir cartões para a atividade de execução, no TRELLO (informando o @Status: <Revisão/Rejeitado/Aprovado>)
+(  ) Finalizar TAREFAS DE EXECUÇÃO, no REDMINE-PRODUTO
+(  ) Concluir CARTÕES para a atividade de execução, no TRELLO-TESTES (informando o @Status: <Rejeitado/Aprovado>)
 (  ) Finalizar o Ticket da ENTREGA DE PACOTE, no REDMINE-PRODUTO
-(  ) Enviar SLACK no respectivo canal informando sobre o FINAL DA EXECUÇÃO
+(  ) Atualizar CARTÕES informando sobre o FINAL DA EXECUÇÃO, no TRELLO-PRODUTO
 ============================================================
 ============================================================
 =========================TEMPLATES==========================
+============================================================
+DADOS DE CONFIGURAÇÃO DO EA (geral):
+User (geral): ea_user_read
+Pwd (geral) : 27_Ea_User_Read
+Servidor    : devops.tjpb.jus.br
+Porta       : 3306
 ============================================================
 PROJETO DE TESTES (Testlink):
 Especificação dos Casos de Testes Funcionais e Execução dos Ciclos de Testes Funcionais para o sistema {sistema}.
@@ -80,6 +85,8 @@ Seguem os dados do andamento dos testes funcionais da versão {versao} - baselin
 >- Número total de bugs reabertos: 0
 >- Número total de bugs novos: 0
 >- Número total de bugs passados para outra versão ou backlog: 0
+>- Número total de bugs rejeitados nesta execução: 0
+>- Número total de bugs na versão: 0
 
 *Previsão de conclusão dos testes: **/**/2019*
 ============================================================
@@ -94,10 +101,13 @@ Critérios de aceitação NÃO satisfeitos:
 
 Motivações sobre casos de teste bloqueados:
 - Bloqueio por funcionalidade anterior defeituosa
-- Testes Obsoletos
+- Testes Obsoletos (desatualização do cenário)
 ============================================================
+************************************************************
 ============================================================
-[{sistema}][v:{versao}, b{baseline}] **Comunicado de Início da Execução de Testes <Funcionais/Automáticos/Exploratórios/de Desempenho/sobre Bugs e Tickets>**
+==                     TRELO PRODUTO                      ==
+============================================================
+@card [{sistema}][v:{versao}, b{baseline}] **Comunicado de Início da Execução de Testes <Funcionais/Automáticos/Exploratórios/de Desempenho/sobre Bugs e Tickets>**
 
 Os testes já foram distribuídos na(s) ferramenta(s) RedMine/Testlink.
 
@@ -112,6 +122,10 @@ Os testes já foram distribuídos na(s) ferramenta(s) RedMine/Testlink.
 ===============================================
 ```
 
+============================================================
+************************************************************
+============================================================
+============================================================
 Link para instruções aos testadores:
 http://gesis.tjpb.jus.br/docsis/documentos/instrucoes-basicas-de-execucao-para-os-testadores
 
@@ -149,17 +163,20 @@ Favor executar com atenção, mais uma vez atentando para o preenchimento e os s
       - "Atribuído para" => respectivo Líder de Testes.
       Favor, lembrar de realizar o preenchimento dos campos:
       - Versão / Identificado na versão => {versao}
-      - Prioridade =>
-        (i)   Baixo, para falhas de interface (bugs cosméticos); de texto da mensagem (ortografia, escrita); ou, cujo requisito/caso de uso ou de teste seja de prioridade baixa.
-        (ii)  Normal, para falhas de tipo da mensagem (sucesso versus erro - falso positivo/negativo); preenchimento de campos e máscaras (regras); ou, funcionalidades (discrepante do especificado nos requisitos/casos de uso, porém não-impeditivas).
-        (iii) Alta/Urgente/Imediato, para falhas impeditivas de funcionalidade (Ex: erro inesperado); ou, impeditivo quanto às regras de negócio (Ex: permite acessos não-autorizados, falta de integridade da informação, etc.).
-      - Caso de Uso => apenas o número do caso de uso.
+      - Prioridade => Normal (será analisado pelo respectivo Líder de Testes)
+      - Classificação do Bug =>
+        (i)   Não Crítico, para falhas de interface (bugs cosméticos); de texto da mensagem (ortografia, escrita); ou, cujo requisito/caso de uso ou de teste seja de prioridade baixa.
+        (ii)  Crítico, para falhas de tipo da mensagem (sucesso versus erro - falso positivo/negativo); preenchimento de campos e máscaras (regras); ou, funcionalidades (discrepante do especificado nos requisitos/casos de uso, porém não-impeditivas).
+        (iii) Impeditivo, para falhas impeditivas de funcionalidade (Ex: erro inesperado); ou, impeditivo quanto às regras de negócio (Ex: permite acessos não-autorizados, falta de integridade da informação, etc.).
+        (iv)  Arquitetural, para falhas relacionadas aos requisitos não-funcionais do sistema (Ex: desempenho, lentidão e travamentos)
+        (v)   Documentação, para falhas onde o produto está desenvolvido de forma correta, porém a descrição ou protótipos relacionados ao requisito/caso de uso/regras possuem falha na especificação.
+      - Caso de Uso => apenas o número do caso de uso (utilizar 000 se não houver).
       - Esforço de Teste => informar em horas.
 
-4. Atualizar diariamente a atividade "[Baseline {baseline}] Execução - <seu nome>", no RedMine, no respectivo subprojeto de "Grupo de Testes >> Testes de Produtos".
+4. Atualizar diariamente a atividade "Execução de Testes <Funcionais/Automáticos/Exploratórios/de Desempenho/sobre Bugs e Tickets> - <seu nome>", no REDMINE-PRODUTO, no respectivo Projeto:
    a) Somente iniciar a bateria de testes atribuídos quando a atividade estiver configurada:
       - "Situação" => "Atribuído";
-      - "% Terminado" => 10%;
+      - "% Terminado" => 40%;
       - "Atribuído para" => <seu nome>.
    b) DIARIAMENTE, preencher o "Tempo Gasto":
       - "Horas": informar em horas;
@@ -184,78 +201,59 @@ At.,
 ============================================================
 |           TAREFAS DE ESPECIFICAÇÃO E EXECUÇÃO            |
 ============================================================
+============================================================
 ===================1º NÍVEL DE ORGANIZAÇÃO==================
 ============================================================
-Devem ser criados 02 (dois) tickets para distribuir versão e
-baselines:
-============================================================
-Título da Tarefa: Versão {versao}
-Descrição       : Planejamento do Sistema {sistema}, na Versão {versao}.
-Tipo da Tarefa  : Planejamento
-
-Título da Tarefa: Baseline {baseline}
-Descrição       : Planejamento do Sistema {sistema}, na Versão {versao}, Baseline {baseline}.
-Tipo da Tarefa  : Planejamento
+A) ESPECIFICAÇÃO DE TESTES : Deve estar relacionada diretamente à versão do produto, no REDMINE-PRODUTO.
+============================
+Título da Tarefa  : Especificação de Casos de Teste
+Descrição         : Especificação de <Casos de Testes/Features/Scripts/Features e Scripts> de Testes <Funcionais Manuais/Automáticos/de Desempenho>, da versão {versao} do sistema {sistema}.
+Tipo da Tarefa    : Teste
+Atividade de Teste: Planejamento
+============================
+B) EXECUÇÃO DE TESTES      : Deve estar relacionada diretamente ao ticket de "Entrega de Pacote" ao qual a execução faz parte, no REDMINE-PRODUTO.
+============================
+Título da Tarefa  : Execução de Testes <Funcionais/Automáticos/Exploratórios/de Desempenho/sobre Bugs e Tickets>
+Descrição         : Execução de testes da versão {versao} do sistema {sistema}.
+Tipo da Tarefa    : Execução de Testes
+Atividade de Teste: Planejamento
 
 ============================================================
 ===================2º NÍVEL DE ORGANIZAÇÃO==================
 ============================================================
 A) ESPECIFICAÇÃO MANUAL    :
 ============================
-Título da Tarefa: Especificação de Casos de Teste
-Descrição       : Especificação de casos de testes da versão {versao} do sistema {sistema}.
-Tipo da Tarefa  : Especificação de Testes
-============================
-B) ESPECIFICAÇÃO AUTOMÁTICA:
-============================
-Título da Tarefa: Especificar <Features/Scripts/Features e Scripts> de Testes Automáticos
-Descrição       : Especificação e/ou Implementação de <Features/Scripts/Features e Scripts> de Testes Automáticos para o sistema {sistema}, versão {versao}.
-Tipo da Tarefa  : Especificação de Testes
-============================
-C) ESPECIFICAÇÃO DESEMPENHO:
-============================
-Título da Tarefa: Especificar Scripts de Testes de Desempenho
-Descrição       : Especificação e Implementação de Scripts de Testes de Desempenho para o sistema {sistema}, versão {versao}.
-Tipo da Tarefa  : Especificação de Testes
-============================
-D) EXECUÇÃO                :
-============================
-Título da Tarefa: Execução de Testes <Funcionais/Automáticos/Exploratórios/de Desempenho/sobre Bugs e Tickets>
-Descrição       : Execução de testes da versão {versao} do sistema {sistema}.
-Tipo da Tarefa  : Execução de Testes
-
-============================================================
-===================3º NÍVEL DE ORGANIZAÇÃO==================
-============================================================
-A) ESPECIFICAÇÃO MANUAL    :
-============================
-Título da Tarefa: Especificar Casos de Testes - <NOME_DO_ESPECIFICADOR>
-Descrição       : Especificação de casos de testes da versão {versao} do sistema {sistema}:
-                  - <LISTA DOS CASOS DE USO, TICKETS DE MUDANÇA, etc.>
-                  URL para acompanhamento: https://goo.gl/oTghhw
-Tipo da Tarefa  : Especificação de Testes
+Título da Tarefa  : Especificar Casos de Testes - <NOME_DO_ESPECIFICADOR>
+Descrição         : Especificação de casos de testes da versão {versao} do sistema {sistema}:
+                    - <LISTA DOS CASOS DE USO, TICKETS DE MUDANÇA, etc.>
+                    URL para acompanhamento: https://goo.gl/oTghhw
+Tipo da Tarefa    : Teste
+Atividade de Teste: Especificação
 ============================
 B) ESPECIFICAÇÃO AUTOMÁTICA:
 ============================
 Título da Tarefa: Especificar <Features/Scripts/Features e Scripts> - <NOME_DO_ESPECIFICADOR>
 Descrição       : Especificação e/ou Implementação de <Features/Scripts/Features e Scripts> de Testes Automáticos para o sistema {sistema}, versão {versao}:
-                  - <LISTA DOS CASOS DE USO, TICKETS DE MUDANÇA, etc.>
-                  URL para acompanhamento:https://goo.gl/6kzxVv
-Tipo da Tarefa  : Especificação de Automáticos
+                    - <LISTA DOS CASOS DE USO, TICKETS DE MUDANÇA, etc.>
+                    URL para acompanhamento: https://goo.gl/6kzxVv
+Tipo da Tarefa    : Teste
+Atividade de Teste: Automação
 ============================
 C) ESPECIFICAÇÃO DESEMPENHO:
 ============================
-Título da Tarefa: Especificar Scripts - <NOME_DO_ESPECIFICADOR>
-Descrição       : Especificação e Implementação Scripts de Testes de Desempenho para o sistema {sistema}, versão {versao}:
-                  - <LISTA DOS CASOS DE USO, TICKETS DE MUDANÇA, etc.>
-Tipo da Tarefa  : Especificação de Desempenho
+Título da Tarefa  : Especificar Scripts - <NOME_DO_ESPECIFICADOR>
+Descrição         : Especificação e Implementação Scripts de Testes de Desempenho para o sistema {sistema}, versão {versao}:
+                    - <LISTA DOS CASOS DE USO, TICKETS DE MUDANÇA, etc.>
+Tipo da Tarefa    : Teste
+Atividade de Teste: Automação
 ============================
 D) EXECUÇÃO                :
 ============================
-Título da Tarefa: Executar Testes <Funcionais/Automáticos/Exploratórios/de Desempenho/sobre Bugs e Tickets> - <NOME_DO_TESTADOR>
-Descrição       : Execução dos testes <Funcionais/Automáticos/Exploratórios/de Desempenho/sobre Bugs e Tickets> atribuídos nas ferramentas TestLink e Redmine:
-                  - <LISTA DOS CASOS DE USO, TICKETS DO REDMINE, etc.>
-Tipo da Tarefa  : Execução de Testes
+Título da Tarefa  : Executar Testes <Funcionais/Automáticos/Exploratórios/de Desempenho/sobre Bugs e Tickets> - <NOME_DO_TESTADOR>
+Descrição         : Execução dos testes <Funcionais/Automáticos/Exploratórios/de Desempenho/sobre Bugs e Tickets> atribuídos nas ferramentas TestLink e Redmine:
+                    - <LISTA DOS CASOS DE USO, TICKETS DO REDMINE, etc.>
+Tipo da Tarefa    : Teste
+Atividade de Teste: Execução
 
 ============================================================
 |                         TRELLO                           |
@@ -267,7 +265,7 @@ Título do Cartão: {sistema}
    Data Término: <final da especificação e atualizações> / Produto: <url para o cartão no quadro PRODUTOS-GESIS>
 == Descrição    :
 @DocumentacaoDisponivel: <data prevista>
-@Status: <Revisão/Rejeitado/Aprovado> (só deve ser preenchido em cartões concluídos)
+@Status: <Rejeitado/Aprovado> (só deve ser preenchido em cartões concluídos)
 
 ========================EXECUÇÃO============================
 Título do Cartão: {sistema}
@@ -277,7 +275,7 @@ Título do Cartão: {sistema}
 == Descrição    :
 @SistemaDisponivel: <data prevista>
 @Produtividade: <padrão: 0.5h/CT>
-@Status: <Revisão/Rejeitado/Aprovado> (só deve ser preenchido em cartões concluídos)
+@Status: <Rejeitado/Aprovado> (só deve ser preenchido em cartões concluídos)
 
 ============================================================
 |          REPOSITÓRIO DE AUTOMAÇÃO NO GITLAB              |
@@ -302,6 +300,7 @@ Especificação e Execução dos Ciclos de Testes Automáticos e de Desempenho p
     > scripts
       > testes_desempenho
         ... (scripts jmx e arquivos de apoio csv)
+      > testes_servicos
     > tests
       > java
         > br/jus/tjpb/testes/fta/
@@ -329,6 +328,8 @@ Especificação e Execução dos Ciclos de Testes Automáticos e de Desempenho p
 ****************** OUTROS TEMPLATES UTEIS ******************
 ============================================================
 ==TICKET DE DEPLOY==
+URL para solicitação: http://bit.ly/SolicitarConfig
+============================================================
 [{sistema}] Deploy da versão {versao} em XXXXXXXXXXXX
 Deploy do {sistema}, v{versao} em "XXXXXXXXXXXX" para fins de teste XXXXXXXXXXXX:
 
@@ -337,9 +338,9 @@ OBSERVAÇÃO (2): O banco de dados apontado pela aplicação deve ser o XXXXXXXX
 OBSERVAÇÃO (3): Deve ser possível realizar "mudança de horário" no ambiente assinalado.
 OBSERVAÇÃO (4): Habilitar o agente InspectIT (para fins de teste de desempenho).
 
-==TICKET DE SOLICITAÇÃO DE NOVO REPOSITÓRIO GITHUB==
-[{sistema}] Criação de NOVO Repositório GITHUB
-Criação de NOVO Repositório GITHUB para o sistema {sistema} para disponibilização dos scripts de testes automáticos:
+==TICKET DE SOLICITAÇÃO DE NOVO REPOSITÓRIO GITLAB==
+[{sistema}] Criação de NOVO Repositório GITLAB
+Criação de NOVO Repositório GITLAB para o sistema {sistema} para disponibilização dos scripts de testes automáticos:
 
 OBSERVAÇÃO (1): Utilizar o nome "testes / TA-{sistema}" para o projeto de automação.
 OBSERVAÇÃO (2): Adicionar permissões de escrita/leitura para o grupo TESTES.

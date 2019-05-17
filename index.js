@@ -15,11 +15,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 ////////
 
-var baseplan = {
-    sistema: "",
-    versao: "",
-    baseline: ""
-};
+var baseplan = {sistema: "", versao: "", baseline: "" };
 
 app.get("/", (req, res) => {
     res.render("layout",{ page: 'pages/home.ejs', errors: false, baseplan: baseplan });
@@ -61,6 +57,9 @@ app.post("/download", [
             })
     }
     res.render("layout", req.body);
+    if(!req.body.errors){
+        limpar();
+    }
 })
 
 ////////
@@ -86,3 +85,6 @@ const writeFile = (path, data) => new Promise((resolve, reject) => {
         }
     })
 });
+const limpar = () => { 
+    baseplan = baseplan = {sistema: "", versao: "", baseline: "" };
+}
