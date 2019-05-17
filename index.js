@@ -31,7 +31,7 @@ app.post("/download", [
     check('baseline','A Baseline deve ser número inteiro maior ou igual a (1) um!').isInt({min:1})
 ], (req, res) => {
     baseplan = req.body;
-    baseplan.filename = baseplan.sistema.replace(/[^A-Z0-9]+/ig, "_") + "-v"+ baseplan.versao + "_b" + baseplan.baseline + ".txt"
+    baseplan.filename = removeAcentoEspeciais(baseplan.sistema) + "-v"+ baseplan.versao + "_b" + baseplan.baseline + ".txt"
 
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -49,7 +49,12 @@ app.post("/download", [
                 data = data.toString().replace(/{baseline}/g, baseplan.baseline);
                 writeFile("./public/files/" + baseplan.filename, data);
             })
-            .then(() => console.log("Arquivo "+ baseplan.filename + " criado com sucesso!"))
+            .then(() => {
+                console.log("Arquivo "+ baseplan.filename + " criado com sucesso!")
+                if(!req.body.errors){
+                    limpar();
+                }
+            })
             .catch(err => {
                 req.body.page = 'pages/home.ejs';
                 req.body.errors = err;
@@ -57,9 +62,6 @@ app.post("/download", [
             })
     }
     res.render("layout", req.body);
-    if(!req.body.errors){
-        limpar();
-    }
 })
 
 ////////
@@ -87,4 +89,15 @@ const writeFile = (path, data) => new Promise((resolve, reject) => {
 });
 const limpar = () => { 
     baseplan = baseplan = {sistema: "", versao: "", baseline: "" };
+}
+const removeAcentoEspeciais = (text) => {
+    text = text.toLowerCase();                                                         
+    text = text.replace(new RegExp('[ÁÀÂÃ]','gi'), 'a');
+    text = text.replace(new RegExp('[ÉÈÊ]','gi'), 'e');
+    text = text.replace(new RegExp('[ÍÌÎ]','gi'), 'i');
+    text = text.replace(new RegExp('[ÓÒÔÕ]','gi'), 'o');
+    text = text.replace(new RegExp('[ÚÙÛ]','gi'), 'u');
+    text = text.replace(new RegExp('[Ç]','gi'), 'c');
+    text = text.replace(new RegExp('[^A-Z0-9]','gi'), '');
+    return text;
 }
