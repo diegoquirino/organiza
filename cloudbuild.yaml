@@ -3,6 +3,3 @@ steps:
   args: [ 'build', '-t', 'gcr.io/diegoquirino-net/organiza-image', '.' ]
 images:
 - 'gcr.io/diegoquirino-net/organiza-image'
-ports:
-  - "8080:80"
-  - "443:443"
