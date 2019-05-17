@@ -1,16 +1,13 @@
-<h1 class="mt-5 mb-3"><i class="far fa-sticky-note"></i> <%= sistema = sistema.replace(/[^A-Z0-9]+/ig,"_") %> v<%= versao %>b<%= baseline %>, planejado</h1>
+<h1 class="mt-5 mb-3"><i class="far fa-sticky-note"></i> <%= sistema %> v<%= versao %>b<%= baseline %>, planejado</h1>
 <div class="alert alert-success" role="alert">
     <p class="text-center">Modelo de Planejamento para o sistema <%= sistema %> v<%= versao %>b<%= baseline %> gerado com sucesso!</p>
 </div>
-
-<% filename = sistema + "_v"+ versao + "b" + baseline + ".txt" %>
-
 <div class="row">
     <div class="col-12 offset-0">
         <div class="card">
-            <p class="m-3">No botão abaixo, faça o download do arquivo <strong><%= filename %></strong> com os dados do planejamento:</p>
+            <p class="m-3">No botão abaixo, faça o download do arquivo <strong><a href="files/<%= filename %>" alt="<%= filename %>" download ><%= filename %></a></strong> com os dados do planejamento:</p>
             <div class="card-body text-center">
-                <a href="files/<%= filename %>" class="btn btn-primary"><i class="fas fa-download"></i> Download do Arquivo</a>
+                <a href="files/<%= filename %>" class="btn btn-primary" alt="<%= filename %>" download ><i class="fas fa-download"></i> Download do Arquivo</a>
                 <a href="home" class="btn btn-secondary"><i class="fas fa-chevron-circle-left"></i> Voltar</a>
             </div>
         </div>
