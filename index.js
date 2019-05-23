@@ -66,7 +66,7 @@ app.post("/download", [
 
 ////////
 app.listen(PORT, HOST);
-console.log("Organiza started at http://localhost:"+PORT);
+console.log("Organiza started at http://"+HOST+":"+PORT);
 
 //////// Functions ////////
 const readFile = path => new Promise((resolve, reject) => {
