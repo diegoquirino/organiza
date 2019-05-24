@@ -91,17 +91,18 @@ Seguem os dados do andamento dos testes funcionais da versão {versao} - baselin
 *Previsão de conclusão dos testes: **/**/2019*
 ============================================================
 ============================================================
-Versão {sistema} v{versao}b{baseline} verificada pelo Grupo de Testes. O resultado segue abaixo.
+@card Versão {sistema} v{versao}b{baseline} verificada pelo Grupo de Testes. O resultado segue abaixo.
 
-Parecer: Versão REJEITADA/APTA PARA HOMOLOGAÇÃO.
+**Parecer: Versão REJEITADA/APTA PARA HOMOLOGAÇÃO.**
 
 Critérios de aceitação NÃO satisfeitos:
 - 100% de Casos de Teste com prioridade Alta/Média 'passou'.
 - 100% de Bugs/Tickets com criticidade acima de Normal 'passou'.
 
 Motivações sobre casos de teste bloqueados:
-- Bloqueio por funcionalidade anterior defeituosa
-- Testes Obsoletos (desatualização do cenário)
+- Bloqueio por funcionalidade anterior defeituosa.
+- Bloqueio por documentação de funcionalidade ausente OU não localizada.
+- Testes Obsoletos (desatualização do cenário).
 ============================================================
 ************************************************************
 ============================================================
