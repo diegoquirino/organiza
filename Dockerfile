@@ -1,4 +1,4 @@
-FROM node:12.2.0-alpine
+FROM node:12.7.0-alpine
 EXPOSE 8080
 COPY . .
 RUN npm install
