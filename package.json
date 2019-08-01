@@ -25,6 +25,7 @@
     "ejs": "2.6.2",
     "express": "4.17.1",
     "express-validator": "6.1.1",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "lodash": "4.17.15"
   }
 }
