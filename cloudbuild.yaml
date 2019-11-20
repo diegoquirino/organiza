@@ -7,6 +7,6 @@ steps:
   args: ['push', 'gcr.io/diegoquirino-net/organiza-image']
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'diegoquirino-net-organiza', '--image', 'gcr.io/diegoquirino-net/organiza-image', '--region', 'us-central1','--allow-unauthenticated','--memory','1Gi']
+  args: ['beta', 'run', 'deploy', 'diegoquirino-net-organiza', '--image', 'gcr.io/diegoquirino-net/organiza-image', '--region', 'us-central1', '--allow-unauthenticated', '--memory', '1Gi', '--platform', 'managed']
 images:
 - gcr.io/diegoquirino-net/organiza-image
