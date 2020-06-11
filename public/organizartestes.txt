@@ -95,7 +95,7 @@ Seguem os dados do andamento dos testes funcionais da versão {versao} - baselin
 
 **Parecer: Versão REJEITADA/APTA PARA HOMOLOGAÇÃO.**
 
-Critérios de aceitação NÃO satisfeitos:
+Critérios de aceitação NÃO SATISFEITOS:
 - 100% de Casos de Teste com prioridade Alta/Média 'passou'.
 - 100% de Bugs/Tickets com criticidade acima de Normal 'passou'.
 
