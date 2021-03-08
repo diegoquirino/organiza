@@ -61,7 +61,7 @@ O PLANO DE TESTES FOI EXECUTADO NA MODALIDADE EXPLORATÓRIO OU APENAS VERIFICAÇ
 Descrição
 Baseline para o ciclo de testes da versão {versao}, baseline {baseline}
 Entrega
-1ª Previsão: **/**/2020 (entregue, *-feira, às **:00h)
+1ª Previsão: **/**/2021 (entregue, *-feira, às **:00h)
 ============================================================
 *===========================================*
 *@channel {sistema} v{versao} - baseline {baseline}*
@@ -88,7 +88,7 @@ Seguem os dados do andamento dos testes funcionais da versão {versao} - baselin
 >- Número total de bugs rejeitados nesta execução: 0
 >- Número total de bugs na versão: 0
 
-*Previsão de conclusão dos testes: **/**/2020*
+*Previsão de conclusão dos testes: **/**/2021*
 ============================================================
 ============================================================
 @card Versão {sistema} v{versao}b{baseline} verificada pelo Grupo de Testes. O resultado segue abaixo.
@@ -118,7 +118,7 @@ Os testes já foram distribuídos na(s) ferramenta(s) RedMine/Testlink.
 | - XXXXX (YYYYY)  |
 ===============================================
 | PERÍODO DA EXECUÇÃO:                        |
-| - De xx/yy até xx/yy/2020                   |
+| - De xx/yy até xx/yy/2021                   |
 | ####     Estimativa: 02 dias úteis     #### |
 ===============================================
 ```
