@@ -32,7 +32,7 @@ B) CHECKLIST DE EXECUÇÃO DA BASELINE {baseline}:
 (  ) Finalizar TAREFAS DE EXECUÇÃO, no REDMINE-PRODUTO
 (  ) Concluir CARTÕES para a atividade de execução, no TRELLO-TESTES (informando o @Status: <Rejeitado/Aprovado>)
 (  ) Finalizar o Ticket da ENTREGA DE PACOTE, no REDMINE-PRODUTO
-(  ) Atualizar CARTÕES informando sobre o FINAL DA EXECUÇÃO, no TRELLO-PRODUTO
+(  ) Informar o FINAL DA EXECUÇÃO, no ROCKET.CHAT
 ============================================================
 ============================================================
 =========================TEMPLATES==========================
