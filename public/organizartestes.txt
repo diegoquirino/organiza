@@ -24,7 +24,7 @@ B) CHECKLIST DE EXECUÇÃO DA BASELINE {baseline}:
 (  ) Atribuir BUGS aos testadores, no REDMINE-PRODUTO
 (  ) Atribuir TAREFAS DE EXECUÇÃO aos testadores, no REDMINE-PRODUTO
 (  ) Atualizar CARTÕES para a atividade de execução, no TRELLO-TESTES
-(  ) Atualizar CARTÕES informando sobre o INÍCIO DA EXECUÇÃO aos líderes, no TRELLO-PRODUTO
+(  ) Informar no canal do ROCKET.CHAT o INÍCIO DA EXECUÇÃO do produto
 (  ) ACOMPANHAR A EXECUÇÃO:
      I. atribuir os BUGs (novos ou retornados) para o LÍDER DE PRODUTO, no REDMINE-PRODUTO
 (  ) Finalizar a PLANILHA DE PRODUTIVIDADE DE TESTADOR, no GOOGLE SHEETS, informando as HORAS DE TESTE mencionadas pelo(s) testador(es) na(s) respectiva(s) atividade(s) de execução, no REDMINE-GESIS
