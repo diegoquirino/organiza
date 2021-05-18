@@ -93,7 +93,7 @@ Seguem os dados do andamento dos testes funcionais da versão {versao} - baselin
 ============================================================
 @card Versão {sistema} v{versao}b{baseline} verificada pelo Grupo de Testes. O resultado segue abaixo.
 
-**Parecer: Versão REJEITADA/APTA PARA HOMOLOGAÇÃO.**
+**Parecer sugerido para a versão: REJEITAR/APTA A HOMOLOGAR.**
 
 Critérios de aceitação NÃO SATISFEITOS:
 - 100% de Casos de Teste com prioridade Alta/Média 'passou'.
